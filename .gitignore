@@ -1,0 +1,81 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Windows:
+[Tt]humbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+*.bat
+
+# Python:
+*.py[cod]
+*.so
+*.egg
+*.egg-info
+
+# VS
+.vs/
+[Rr]elease/
+[Rr]eleases/
+[Ll]og/
+[Ll]ogs/
+**/[Pp]ublish/
+**/[Bb]in/
+**/[Oo]bj/
+**/[Ll]og/
+**/[Pp]ackages/
+**/wwwroot/
+*.user 
+*.pch 
+*.tlh 
+*.tli 
+*.pdb
+*.suo 
+*.lastbuildstate 
+*.Build.CppClean.log 
+*.ipch 
+
+# Webstorm
+*.idea 
+*node_modules
+
+# compiled output
+**/tmp
+artifacts/
+nupkgs/
+
+# dependencies
+/node_modules
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
+
+# e2e
+/e2e/*.js
+/e2e/*.map
+
+#System Files
+.DS_Store
+Thumbs.db

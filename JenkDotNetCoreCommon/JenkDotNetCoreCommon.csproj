@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <IncludeSymbols>true</IncludeSymbols>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateNuspecDependsOn>$(GenerateNuspecDependsOn);ReadPackageVersionFromOutputAssembly</GenerateNuspecDependsOn>
+  </PropertyGroup>
+
+  <Target Name="ReadPackageVersionFromOutputAssembly" DependsOnTargets="Build">
+    <GetAssemblyIdentity AssemblyFiles="$(TargetPath)">
+      <Output TaskParameter="Assemblies" ItemName="PackAssembly" />
+    </GetAssemblyIdentity>
+    <PropertyGroup>
+      <Title>%(PackAssembly.Title)</Title>
+      <Description>%(PackAssembly.Description)</Description>
+      <Company>%(PackAssembly.Company)</Company>
+      <Copyright>%(PackAssembly.Copyright)</Copyright>
+      <PackageVersion>%(PackAssembly.Version)</PackageVersion>
+      <PackageId>JenkDotNetCoreCommon</PackageId>
+      <VersionPrefix></VersionPrefix>
+      <VersionSuffix>alpha</VersionSuffix>
+      <Authors>Jenkin Tang</Authors>
+      <Owners>Jenkin Tang</Owners>
+      <ProjectUrl>https://github.com/jenkshiny/JenkDotNetCoreCommon</ProjectUrl>
+      <LicenseUrl></LicenseUrl>
+      <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+      <PackageTags>DotNetCore</PackageTags>
+      <PackageReleaseNotes></PackageReleaseNotes>
+    </PropertyGroup>
+  </Target>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.ResponseCompression" Version="2.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System">
+      <HintPath>System</HintPath>
+    </Reference>
+  </ItemGroup>
+  
+</Project>

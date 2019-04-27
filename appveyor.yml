@@ -1,0 +1,13 @@
+version: '{build}'
+branches:  
+  only:
+  - master
+build_script:
+  - ps: .\build.ps1
+test: off
+artifacts:  
+- path: .\artifacts\*.nupkg
+  name: NuGet
+environment: 
+  api_key:
+    secure: iQASWn3+TfCzJ8rzwp4FWIkqh3kbJ8tF2sqlkqvs3j/Kwhr38+UcoFG/bkM9xzdbon
